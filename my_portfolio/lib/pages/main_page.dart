@@ -167,7 +167,9 @@ class _MainPageState extends State<MainPage> {
                                       width: 50,
                                       child: IconButton.filled(
                                         style: ButtonDesign.contacts,
-                                        onPressed: () {},
+                                        onPressed: () => _launchUrl(
+                                          "https://github.com/IKairuu",
+                                        ),
                                         icon: FaIcon(
                                           FontAwesomeIcons.github,
                                           size: 30,
@@ -180,7 +182,9 @@ class _MainPageState extends State<MainPage> {
                                     width: 50,
                                     child: IconButton.filled(
                                       style: ButtonDesign.contacts,
-                                      onPressed: () {},
+                                      onPressed: () => _launchUrl(
+                                        "https://www.facebook.com/ky.abandia/",
+                                      ),
                                       icon: FaIcon(
                                         FontAwesomeIcons.facebook,
                                         size: 30,
