@@ -134,7 +134,7 @@ class _RepoBuilderState extends State<RepoBuilder> {
                 Row(
                   spacing: 5,
                   children: [
-                    FaIcon(FontAwesomeIcons.codeFork),
+                    FaIcon(FontAwesomeIcons.codeFork, color: Colors.white),
                     Text(
                       "${widget.repo.forks}",
                       style: FontStyles.repoDescription,

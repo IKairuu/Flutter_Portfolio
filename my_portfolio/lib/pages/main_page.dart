@@ -174,18 +174,6 @@ class _MainPageState extends State<MainPage> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(right: 10),
-                                    child: SizedBox(
-                                      height: 50,
-                                      width: 50,
-                                      child: IconButton.filled(
-                                        style: ButtonDesign.contacts,
-                                        onPressed: () {},
-                                        icon: Icon(Icons.email, size: 30),
-                                      ),
-                                    ),
-                                  ),
                                   SizedBox(
                                     height: 50,
                                     width: 50,
@@ -367,6 +355,7 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
                 Container(
+                  padding: EdgeInsets.all(10),
                   height: 200,
                   width: double.infinity,
                   decoration: ContainerDesign.mainContainer,
@@ -380,34 +369,53 @@ class _MainPageState extends State<MainPage> {
                               padding: EdgeInsets.all(5),
                               decoration: ContainerDesign.iconInfo,
                               child: Icon(
-                                Icons.folder_open_rounded,
+                                Icons.cases_outlined,
                                 color: Color(0xFF4ba3ec),
                               ),
                             ),
                           ),
-                          Expanded(
-                            child: Text(
-                              "Projects",
-                              style: FontStyles.titleSections,
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: () =>
-                                _launchUrl("https://github.com/IKairuu"),
-                            child: Row(
-                              children: [
-                                Text(
-                                  "View Profile",
-                                  style: FontStyles.occupation,
-                                ),
-                                Icon(
-                                  Icons.keyboard_arrow_right_sharp,
-                                  color: Color(0xFF4ba3ec),
-                                ),
-                              ],
-                            ),
-                          ),
+                          Text("Experience", style: FontStyles.titleSections),
                         ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: SizedBox(
+                          height: 100,
+                          width: double.infinity,
+                          child: ListView.separated(
+                            itemBuilder: (context, index) {
+                              return Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 20),
+                                    child: Container(
+                                      height: 5,
+                                      width: 5,
+                                      decoration: BoxDecoration(
+                                        color: Colors.blue,
+                                        borderRadius: BorderRadius.circular(50),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 40),
+                                    child: Text(
+                                      experience.value[index].date,
+                                      style: FontStyles.experienceDate,
+                                    ),
+                                  ),
+                                  Text(
+                                    experience.value[index].details,
+                                    style: FontStyles.experienceDetails,
+                                  ),
+                                ],
+                              );
+                            },
+                            separatorBuilder: (context, index) =>
+                                VerticalDivider(color: Colors.white),
+                            itemCount: experience.value.length,
+                          ),
+                        ),
                       ),
                     ],
                   ),

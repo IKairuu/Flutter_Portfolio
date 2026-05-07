@@ -41,4 +41,14 @@ class FontStyles {
     color: Colors.white,
     fontWeight: FontWeight.w600,
   );
+
+  static final TextStyle experienceDate = TextStyle(
+    color: Colors.blue,
+    fontWeight: FontWeight.w800,
+  );
+
+  static final TextStyle experienceDetails = TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w200,
+  );
 }

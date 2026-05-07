@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/models/experience.dart';
 import 'package:my_portfolio/models/repository.dart';
 import 'package:my_portfolio/models/technology.dart';
 
@@ -203,4 +204,12 @@ ValueNotifier<List<Repository>> repositories = ValueNotifier([
     technologies: ["C++"],
     githubLink: "https://github.com/IKairuu/Pac-Buddy-Game",
   ),
+]);
+ValueNotifier<List<Experience>> experience = ValueNotifier([
+  Experience(
+    date: "May 29, 2026",
+    details: "ISITE Programming Language Competition Participant",
+  ),
+  Experience(date: "Jun. 18, 2025", details: "National AI Prompt Competition"),
+  Experience(date: "Mar. 28, 2025", details: "Coding Competition: 2nd Place"),
 ]);
