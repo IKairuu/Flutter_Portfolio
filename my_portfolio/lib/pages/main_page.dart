@@ -8,6 +8,7 @@ import 'package:my_portfolio/designs/button_design.dart';
 import 'package:my_portfolio/designs/container_design.dart';
 import 'package:my_portfolio/designs/font_styles.dart';
 import 'package:my_portfolio/notifiers.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -17,6 +18,15 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  Future<void> _launchUrl(String url) async {
+    if (!await launchUrl(
+      Uri.parse(url),
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
   ScrollController mainScroll = ScrollController();
   ScrollController occupationScroll = ScrollController();
   @override
@@ -320,7 +330,8 @@ class _MainPageState extends State<MainPage> {
                             ),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () =>
+                                _launchUrl("https://github.com/IKairuu"),
                             child: Row(
                               children: [
                                 Text(
@@ -340,7 +351,7 @@ class _MainPageState extends State<MainPage> {
                         valueListenable: repositories,
                         builder: (context, repo, child) {
                           return SizedBox(
-                            height: 500,
+                            height: 300,
                             child: ListView.separated(
                               separatorBuilder: (context, index) =>
                                   SizedBox(height: 10),
@@ -355,7 +366,52 @@ class _MainPageState extends State<MainPage> {
                     ],
                   ),
                 ),
-                Container(decoration: ContainerDesign.mainContainer),
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  decoration: ContainerDesign.mainContainer,
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: Container(
+                              padding: EdgeInsets.all(5),
+                              decoration: ContainerDesign.iconInfo,
+                              child: Icon(
+                                Icons.folder_open_rounded,
+                                color: Color(0xFF4ba3ec),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              "Projects",
+                              style: FontStyles.titleSections,
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () =>
+                                _launchUrl("https://github.com/IKairuu"),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "View Profile",
+                                  style: FontStyles.occupation,
+                                ),
+                                Icon(
+                                  Icons.keyboard_arrow_right_sharp,
+                                  color: Color(0xFF4ba3ec),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
                 Container(decoration: ContainerDesign.mainContainer),
               ],
             ),

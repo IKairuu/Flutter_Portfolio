@@ -138,22 +138,30 @@ ValueNotifier<List<Technology>> tools = ValueNotifier([
 ValueNotifier<List<Repository>> repositories = ValueNotifier([
   Repository(
     title: "Project_Hakbang",
-    imageUrl: "HA",
+    imageUrl: "assets/hakbang_main_logo.png",
     stars: 0,
     forks: 1,
     description:
         "HAKBANG is an educational guidance platform designed to help Filipino senior high school students take the right hakbang toward making informed and strategic decisions as they prepare for higher education.",
+    technologies: ["Dart", "Flutter", "Git"],
+    githubLink: "https://github.com/IKairuu/Project_Hakbang",
+  ),
+  Repository(
+    title: "Project_Hakbang_Server",
+    imageUrl: "SS",
+    stars: 0,
+    forks: 0,
+    description:
+        "API Server for providing third party services to Hakbang Application. The server implements a modular layered acrhitecture interconnecting messages from the application requests and server responses that includes Gemini AI and Firestore",
     technologies: [
-      "Dart",
-      "Flutter",
-      "Render",
-      "Firebase",
+      "Javascript",
       "Node.js",
       "Express.js",
-      "Git",
+      "Firebase",
       "Postman",
+      "Git",
     ],
-    githubLink: "https://github.com/IKairuu/Project_Hakbang",
+    githubLink: "https://github.com/IKairuu/Project_Hakbang_Server",
   ),
   Repository(
     title: "Smart Spend",
@@ -161,8 +169,38 @@ ValueNotifier<List<Repository>> repositories = ValueNotifier([
     stars: 0,
     forks: 0,
     description:
-        "Smart Spend is a an AI powered expense and income tracking platform capable of storing expense descriptions and incomes. Smart Spend implements informational charts to monitor expenses and their category of expenses",
-    technologies: ["Flutter", "Dart", "Hive"],
-    githubLink: "https://github.com/IKairuu/Project_Hakbang",
+        "Smart Spend is a an AI powered expense and income tracking platform capable of storing expense descriptions and incomes. Smart Spend implements informational charts to monitor expenses and their category of expenses.",
+    technologies: ["Dart", "Flutter", "Hive"],
+    githubLink: "https://github.com/IKairuu/Smart_Spend",
+  ),
+  Repository(
+    title: "Itsuki-Bot",
+    imageUrl: "assets/itsuki.png",
+    stars: 3,
+    forks: 0,
+    description:
+        "Itsuki Nakano Discord Study Bot - Your personal study partner with the voice and attitude of Itsuki Nakano from The Quintessential Quintuplets! She’s flustered, stubborn, and surprisingly reliable. Whether you're reviewing, taking a quiz, or asking for help, she’s always ready with a tsundere comment to keep you motivated.",
+    technologies: ["Python", "discord.py", "Replit"],
+    githubLink: "https://github.com/IKairuu/Itsuki-Bot",
+  ),
+  Repository(
+    title: "Project-Rythmix",
+    imageUrl: "PR",
+    stars: 0,
+    forks: 0,
+    description:
+        "A Python-based desktop application for organizing and playing your local MP3 music collection. The Rythmix provides a user-friendly interface for importing songs, managing metadata, and controlling playback, all powered by PyQt6, Pygame, and MySQL Database.",
+    technologies: ["Python", "PyQT", "MySQL"],
+    githubLink: "https://github.com/IKairuu/Project-Rythmix",
+  ),
+  Repository(
+    title: "Pac-Buddy Game",
+    imageUrl: "PB",
+    stars: 0,
+    forks: 0,
+    description:
+        "Pacman game with Snake game mechanics developed with C++ library graphics.h",
+    technologies: ["C++"],
+    githubLink: "https://github.com/IKairuu/Pac-Buddy-Game",
   ),
 ]);
