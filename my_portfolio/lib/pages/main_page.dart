@@ -341,7 +341,9 @@ class _MainPageState extends State<MainPage> {
                         builder: (context, repo, child) {
                           return SizedBox(
                             height: 500,
-                            child: ListView.builder(
+                            child: ListView.separated(
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(height: 10),
                               scrollDirection: Axis.vertical,
                               itemCount: repo.length,
                               itemBuilder: (context, index) =>

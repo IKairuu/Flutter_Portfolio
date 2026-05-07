@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/designs/container_design.dart';
 import 'package:my_portfolio/designs/font_styles.dart';
+import 'package:my_portfolio/functions/identify_technology.dart';
 import 'package:my_portfolio/models/repository.dart';
 
 class RepoBuilder extends StatefulWidget {
@@ -65,17 +66,67 @@ class _RepoBuilderState extends State<RepoBuilder> {
                     style: FontStyles.repoDescription,
                   ),
                 ),
+                SizedBox(
+                  width: double.infinity,
+                  height: 30,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) => SizedBox(width: 5),
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: widget.repo.technologies.length,
+                    itemBuilder: (context, index) {
+                      List<Color> containerColors =
+                          IdentifyTechnology.identifyColor(
+                            widget.repo.technologies[index],
+                          );
+                      return Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 5,
+                        ),
+                        decoration: BoxDecoration(
+                          color: containerColors[0],
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Center(
+                          child: Text(
+                            style: TextStyle(
+                              color: containerColors[1],
+                              fontWeight: FontWeight.w500,
+                              fontSize: 10,
+                            ),
+                            widget.repo.technologies[index],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 10,
             children: [
-              Text("⭐ ${widget.repo.stars}"),
               Row(
+                spacing: 5,
+                children: [
+                  Text("⭐ "),
+                  Text(
+                    widget.repo.stars.toString(),
+                    style: FontStyles.repoDescription,
+                  ),
+                ],
+              ),
+              Row(
+                spacing: 5,
                 children: [
                   FaIcon(FontAwesomeIcons.codeFork),
-                  Text("${widget.repo.forks}"),
+                  Text(
+                    "${widget.repo.forks}",
+                    style: FontStyles.repoDescription,
+                  ),
                 ],
               ),
             ],

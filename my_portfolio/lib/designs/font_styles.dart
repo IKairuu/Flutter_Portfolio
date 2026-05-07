@@ -37,5 +37,8 @@ class FontStyles {
     fontSize: 12,
   );
 
-  static final TextStyle forkStar = TextStyle();
+  static final TextStyle forkStar = TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w600,
+  );
 }
