@@ -51,4 +51,9 @@ class FontStyles {
     color: Colors.white,
     fontWeight: FontWeight.w200,
   );
+
+  static final TextStyle contact = TextStyle(
+    color: Colors.white,
+    fontWeight: FontWeight.w200,
+  );
 }

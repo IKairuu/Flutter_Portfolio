@@ -149,7 +149,7 @@ ValueNotifier<List<Repository>> repositories = ValueNotifier([
   ),
   Repository(
     title: "Project_Hakbang_Server",
-    imageUrl: "SS",
+    imageUrl: "assets/hakbang_main_logo.png",
     stars: 0,
     forks: 0,
     description:

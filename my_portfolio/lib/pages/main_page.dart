@@ -1,5 +1,6 @@
 import 'package:fading_edge_scrollview/fading_edge_scrollview.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/builds/repo_builder.dart';
@@ -356,7 +357,6 @@ class _MainPageState extends State<MainPage> {
                 ),
                 Container(
                   padding: EdgeInsets.all(10),
-                  height: 200,
                   width: double.infinity,
                   decoration: ContainerDesign.mainContainer,
                   child: Column(
@@ -380,9 +380,9 @@ class _MainPageState extends State<MainPage> {
                       Padding(
                         padding: const EdgeInsets.only(top: 10),
                         child: SizedBox(
-                          height: 100,
                           width: double.infinity,
                           child: ListView.separated(
+                            shrinkWrap: true,
                             itemBuilder: (context, index) {
                               return Row(
                                 children: [
@@ -420,7 +420,108 @@ class _MainPageState extends State<MainPage> {
                     ],
                   ),
                 ),
-                Container(decoration: ContainerDesign.mainContainer),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  width: double.infinity,
+                  decoration: ContainerDesign.mainContainer,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(right: 10),
+                              child: Container(
+                                padding: EdgeInsets.all(5),
+                                decoration: ContainerDesign.iconInfo,
+                                child: Icon(
+                                  Icons.phone,
+                                  color: Color(0xFF4ba3ec),
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "Contact Information",
+                              style: FontStyles.titleSections,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        spacing: 10,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 5,
+                              horizontal: 10,
+                            ),
+                            height: 50,
+                            decoration: ContainerDesign.contactInfos,
+                            child: Row(
+                              children: [
+                                Icon(Icons.mail, color: Colors.blue),
+                                SizedBox(width: 5),
+                                MarkdownBody(
+                                  selectable: true,
+                                  data: "abandiakyle2112@gmail.com",
+                                  styleSheet: MarkdownStyleSheet(
+                                    p: FontStyles.contact,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 5,
+                              horizontal: 10,
+                            ),
+                            height: 50,
+                            decoration: ContainerDesign.contactInfos,
+                            child: Row(
+                              children: [
+                                Icon(Icons.phone, color: Colors.blue),
+                                SizedBox(width: 5),
+                                MarkdownBody(
+                                  selectable: true,
+                                  data: "+63 999 108 3321",
+                                  styleSheet: MarkdownStyleSheet(
+                                    p: FontStyles.contact,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 5,
+                              horizontal: 10,
+                            ),
+                            height: 50,
+                            decoration: ContainerDesign.contactInfos,
+                            child: Row(
+                              children: [
+                                FaIcon(
+                                  FontAwesomeIcons.discord,
+                                  color: Colors.blue,
+                                ),
+                                SizedBox(width: 5),
+                                MarkdownBody(
+                                  selectable: true,
+                                  data: "2kairuii_1_74073",
+                                  styleSheet: MarkdownStyleSheet(
+                                    p: FontStyles.contact,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

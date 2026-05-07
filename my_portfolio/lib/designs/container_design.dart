@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 class ContainerDesign {
@@ -38,5 +39,11 @@ class ContainerDesign {
   static final BoxDecoration repoImages = BoxDecoration(
     color: Color(0xFF06090d),
     borderRadius: BorderRadius.circular(15),
+  );
+
+  static final BoxDecoration contactInfos = BoxDecoration(
+    color: Color(0xFF13181f),
+    borderRadius: BorderRadius.circular(10),
+    border: BoxBorder.all(color: Color(0xFF333238)),
   );
 }
